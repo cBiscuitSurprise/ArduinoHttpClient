@@ -48,6 +48,20 @@ void HttpClient::stop()
   resetState();
 }
 
+void HttpClient::setHostAndPort(const char *host, uint16_t port) {
+    stop();
+    iServerName = host;
+    iServerPort = port;
+}
+
+const char* HttpClient::getHost() {
+    return iServerName;
+}
+
+uint16_t HttpClient::getPort() {
+    return iServerPort;
+}
+
 void HttpClient::connectionKeepAlive()
 {
   iConnectionClose = false;

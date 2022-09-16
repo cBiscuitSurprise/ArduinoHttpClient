@@ -317,6 +317,10 @@ public:
     virtual operator bool() { return bool(iClient); };
     virtual uint32_t httpResponseTimeout() { return iHttpResponseTimeout; };
     virtual void setHttpResponseTimeout(uint32_t timeout) { iHttpResponseTimeout = timeout; };
+
+    void setHostAndPort(const char *host, uint16_t port);
+    const char* getHost();
+    uint16_t getPort();
 protected:
     /** Reset internal state data back to the "just initialised" state
     */
